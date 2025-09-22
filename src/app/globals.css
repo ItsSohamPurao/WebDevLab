@@ -22,5 +22,37 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans); /* Use the Geist font */
+}
+
+/* Basic prose styles for content pages */
+.prose {
+  line-height: 1.7;
+}
+.prose p {
+  margin-bottom: 1.25em;
+}
+.prose a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+.prose a:hover {
+  color: var(--foreground) / 0.7;
+}
+.prose ul {
+  list-style: none;
+  padding-left: 0;
+}
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+/* Dark mode prose styles */
+.dark .prose-invert a {
+  color: var(--foreground);
+}
+.dark .prose-invert a:hover {
+  color: var(--foreground) / 0.7;
 }
