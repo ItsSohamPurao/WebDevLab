@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// 1. Import new fonts
+import { Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header"; // 1. Import the Header
+import Header from "@/components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// 2. Configure the fonts
+const pressStart = Press_Start_2P({
+  weight: ["400"],
   subsets: ["latin"],
+  variable: "--font-press-start",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const vt323 = VT323({
+  weight: ["400"],
   subsets: ["latin"],
+  variable: "--font-vt323",
 });
 
 export const metadata: Metadata = {
-  // 2. Update metadata
-  title: "Soham Purao | Web Developer",
-  description: "The professional portfolio of Soham Purao.",
+  title: "Soham Purao // [Digital Craftsman]",
+  description: "Portfolio of Soham Purao. Exploring the intersection of Machine Learning, Photography, and Web Development.",
 };
 
 export default function RootLayout({
@@ -26,13 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* 3. Apply the font variables to the body */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${pressStart.variable} ${vt323.variable} antialiased font-sans`}
       >
-        <Header /> {/* 3. Render the Header */}
-        <div className="pt-20"> {/* 4. Add padding to avoid content hiding under the fixed header */}
-          {children}
-        </div>
+        <Header />
+        {/* Add padding to account for the fixed header */}
+        <main className="pt-24">{children}</main>
       </body>
     </html>
   );
