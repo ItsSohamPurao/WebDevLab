@@ -5,15 +5,15 @@ import { useState } from 'react';
 const projects = [
   {
     id: 1,
-    title: "[Project Title 1]",
-    description: "[A brief, compelling description of what this project does, the problem it solves, and the tech used.]",
+    title: "News Sarcasm Detection",
+    description: "Developed and deployed a complete NLP text classification system to detect sarcasm in news headlines.Achieved 94% accuracy by fine-tuning a RoBERTa transformer model, deployed as an interactive web application with FlaskAPI.",
     href: "#", // Link to the project demo or GitHub
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Example YouTube embed link
   },
   {
     id: 2,
-    title: "[Project Title 2]",
-    description: "[A brief, compelling description of what this project does, the problem it solves, and the tech used.]",
+    title: "Voice controlled AI assistant for Android ",
+    description: "Developed an AI-powered virtual assistant that responds to voice commands to open applications, search theweb, schedule meetings, and perform system tasks on Android. Integrated Speech Recognition, Text-to Speech (TTS), Natural Language Processing (NLP), and Flask to enable seamless interaction andcommand execution across platforms.",
     href: "#",
     videoUrl: null, // This project doesn't have a video
   },

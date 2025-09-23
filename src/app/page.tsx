@@ -11,7 +11,7 @@ export default function Home() {
           Soham Purao
         </h1>
         <p className="text-xl sm:text-2xl text-cyan-300 mb-10 max-w-3xl mx-auto">
-          [Your one-sentence professional summary. Make it punchy. e.g., "Full-stack developer crafting digital realities from code and coffee."]
+          I am student in DJ Sanghvi College of Engineering, pursuing B.Tech in AIML. Other than academics I enjoy working out , photography and gaming.
         </p>
         <div className="flex gap-6 justify-center">
           <Link href="/projects" className="btn btn-primary">
