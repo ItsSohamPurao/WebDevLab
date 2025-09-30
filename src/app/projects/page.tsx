@@ -2,24 +2,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-
-// Example project structure. You will map over your actual project data.
-const projects = [
-  {
-    id: 1,
-    title: "News Sarcasm Detection",
-    description: "Developed and deployed a complete NLP text classification system to detect sarcasm in news headlines.Achieved 94% accuracy by fine-tuning a RoBERTa transformer model, deployed as an interactive web application with FlaskAPI.",
-    href: "#", // Link to the project demo or GitHub
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Example YouTube embed link
-  },
-  {
-    id: 2,
-    title: "Voice controlled AI assistant for Android ",
-    description: "Developed an AI-powered virtual assistant that responds to voice commands to open applications, search theweb, schedule meetings, and perform system tasks on Android. Integrated Speech Recognition, Text-to Speech (TTS), Natural Language Processing (NLP), and Flask to enable seamless interaction andcommand execution across platforms.",
-    href: "#",
-    videoUrl: null, // This project doesn't have a video
-  },
-];
+import { projects } from '@/data/projects'; // Import the projects data
 
 export default function Projects() {
   const [modalVideoUrl, setModalVideoUrl] = useState<string | null>(null);
