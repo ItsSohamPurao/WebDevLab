@@ -1,5 +1,7 @@
+// src/app/projects/page.tsx
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 
 // Example project structure. You will map over your actual project data.
 const projects = [
@@ -36,9 +38,9 @@ export default function Projects() {
             <h3 className="text-2xl font-mono uppercase text-fuchsia-400 mb-2">{project.title}</h3>
             <p className="text-gray-300 mb-4 flex-grow">{project.description}</p>
             <div className="flex gap-4 mt-auto">
-              <a href={project.href} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-xs">
-                View Site
-              </a>
+              <Link href={`/projects/${project.id}`} className="btn btn-primary text-xs">
+                View Details
+              </Link>
               {project.videoUrl && (
                 <button onClick={() => setModalVideoUrl(project.videoUrl)} className="btn btn-secondary text-xs">
                   Watch Demo

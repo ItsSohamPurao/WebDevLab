@@ -59,3 +59,118 @@ body {
   background-color: color-mix(in srgb, var(--cyan) 80%, white);
   border-color: color-mix(in srgb, var(--cyan) 80%, white);
 }
+.intro-overlay {
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.character-image {
+  -webkit-filter: drop-shadow(0 0 15px var(--primary-glow));
+  filter: drop-shadow(0 0 15px var(--primary-glow));
+  transition: transform 0.2s ease-out, filter 0.2s ease-out;
+}
+
+.intro-overlay:hover .character-image {
+  transform: scale(1.05);
+  -webkit-filter: drop-shadow(0 0 25px var(--secondary-glow));
+  filter: drop-shadow(0 0 25px var(--secondary-glow));
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s; /* Delay to allow the overlay to fade out first */
+}
+.intro-overlay {
+  /* remove: transition: opacity 0.5s ease-out, visibility 0.5s ease-out; */
+}
+
+.character-image {
+  -webkit-filter: drop-shadow(0 0 15px var(--primary-glow));
+  filter: drop-shadow(0 0 15px var(--primary-glow));
+  transition: transform 0.2s ease-out, filter 0.2s ease-out;
+}
+
+.intro-overlay:hover .character-image {
+  transform: scale(1.05);
+  -webkit-filter: drop-shadow(0 0 25px var(--secondary-glow));
+  filter: drop-shadow(0 0 25px var(--secondary-glow));
+}
+
+/* Gun Styles */
+.gun-container {
+  position: fixed;
+  bottom: -100px; /* Start slightly off-screen */
+  right: -150px; /* Start slightly off-screen */
+  width: 800px; /* Adjust as needed */
+  pointer-events: none; /* Make sure it doesn't block clicks on the overlay */
+  animation: slideInGun 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.gun-image {
+  width: 100%;
+  height: auto;
+}
+
+/* New and Updated Keyframe Animations */
+@keyframes slideInGun {
+  from {
+    transform: translate(100px, 100px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes recoil {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(10px, 10px) rotate(-2deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+.recoil {
+  animation: recoil 0.2s ease-out;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}

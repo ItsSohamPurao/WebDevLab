@@ -1,5 +1,7 @@
+// src/app/about/page.tsx
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const photos = [
   // CORRECT: These paths are relative to the 'public' folder.
@@ -40,11 +42,16 @@ export default function About() {
       </section>
       
       <section>
-        <h2 className="text-4xl sm:text-5xl font-mono uppercase glitch-text mb-8" data-text="Photography">
-          Photography
-        </h2>
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-4xl sm:text-5xl font-mono uppercase glitch-text" data-text="Photography">
+            Photography
+          </h2>
+          <Link href="/about/gallery" className="btn btn-secondary">
+            View Gallery
+          </Link>
+        </div>
         <div className="columns-2 md:columns-3 gap-4">
-          {photos.map((photo) => (
+          {photos.slice(0, 3).map((photo) => (
             <div key={photo.id} className="mb-4 break-inside-avoid">
                <Image
                   src={photo.src}
@@ -60,4 +67,3 @@ export default function About() {
     </div>
   );
 }
-
